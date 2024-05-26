@@ -27,7 +27,7 @@ app.use('/payment', payment_routes)
 
 mongoose
     .connect(
-        `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.mtqh778.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+        `mongodb+srv://admin:cTX5XJqpNlIsgQx7@cluster0.mtqh778.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
     )
     .then(() => app.listen(8080, () => console.log('server and database connected')))
     .catch((e) => console.log(e));

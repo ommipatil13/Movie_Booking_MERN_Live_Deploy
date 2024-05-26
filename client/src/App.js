@@ -11,8 +11,7 @@ import Booking from "./components/Bookings/Booking";
 import UserProfile from "./profile/UserProfile";
 import AddMovie from "./components/Movies/AddMovie";
 import AdminProfile from "./profile/AdminProfile";
-import Payment from "./Payment/Payment";
-import Carousell from "./assets/Carousell";
+
 
 
 function App() {
@@ -43,15 +42,15 @@ function App() {
           {
             !isUserLoggedIn && !isAdminLoggedIn &&
             <>
-              < Route path='/admin' element={<Admin />} />
+              < Route path='/admins' element={<Admin />} />
               <Route path='/auth' element={<Auth />} />
             </>
           }
           {isUserLoggedIn && !isAdminLoggedIn &&
             <>
-              <Route path='/user' element={<UserProfile />} />
+              <Route path='/users' element={<UserProfile />} />
               <Route path='/booking/:id' element={<Booking />} />
-              <Route path='/payment' element={<Payment />} />
+
             </>
           }
           {isAdminLoggedIn && !isUserLoggedIn &&

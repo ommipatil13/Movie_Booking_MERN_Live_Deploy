@@ -61,13 +61,13 @@ const Header = () => {
                         <Tab LinkComponent={Link} to='/movies' label='Films' />
                         {
                             !isAdminLoggedIn && !isUserLoggedIn && <>
-                                <Tab LinkComponent={Link} to='/admin' label='Admin' />
+                                <Tab LinkComponent={Link} to='/admins' label='Admin' />
                                 <Tab LinkComponent={Link} to='/auth' label='User' />
                             </>
                         }
                         {
                             isUserLoggedIn && <>
-                                <Tab LinkComponent={Link} to='/user' label='Profile' />
+                                <Tab LinkComponent={Link} to='/users' label='Profile' />
                                 <Tab LinkComponent={Link} to='/' label='Logout' onClick={() => logout(false)} />
                             </>
                         }

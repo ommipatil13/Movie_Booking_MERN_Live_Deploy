@@ -20,12 +20,10 @@ const UserProfile = () => {
         getUserDetails().then((res) => setUser(res.user)).catch((error) => console.log(error))
     }, [])
 
-    // console.log("bookings", bookings)
-    // console.log(user._id)
 
     const handleDelete = (id) => {
 
-        deleteBooking(id).then((res) => console.log(res)).catch((error) => console.log(error));
+        deleteBooking(id).then((res) => console.log('delete')).catch((error) => console.log(error));
         window.location.reload();
     }
 
@@ -33,7 +31,6 @@ const UserProfile = () => {
         let name = e.target.name;
         let value = e.target.value;
         setUser({ ...user, [name]: value })
-        console.log(name, value)
     }
 
     const id = user._id;

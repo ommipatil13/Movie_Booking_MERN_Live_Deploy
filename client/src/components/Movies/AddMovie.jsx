@@ -22,8 +22,8 @@ const AddMovie = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(inputs, actors)
-        addMovie({ ...inputs, actors }).then((res) => console.log(res)).catch((error) => console.log(error))
+
+        addMovie({ ...inputs, actors }).then((res) => console.log("movie added")).catch((error) => console.log(error))
 
     }
 

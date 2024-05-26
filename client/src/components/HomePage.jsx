@@ -14,7 +14,6 @@ const HomePage = () => {
     useEffect(() => {
         getAllMovies().then((data) => setMovies(data.movies)).catch((error) => console.log(error))
     }, [])
-    console.log(movies)
 
     const [loading, setLoading] = useState(false)
 

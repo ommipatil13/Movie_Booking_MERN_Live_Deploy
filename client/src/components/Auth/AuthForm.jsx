@@ -17,13 +17,13 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
 
     const handleChange = (e) => {
         setInputs((prevState) => ({ ...prevState, [e.target.name]: e.target.value }))
-        // console.log(inputs)
+
 
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(inputs)
+
         onSubmit({ inputs, signup: isAdmin ? false : isSignUp })
 
     }

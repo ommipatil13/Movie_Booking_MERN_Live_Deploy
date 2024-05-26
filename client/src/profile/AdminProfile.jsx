@@ -12,7 +12,6 @@ const AdminProfile = () => {
         getAdminById().then((res) => setAdmin(res.admin)).catch((error) => console.log(error))
     }, [])
 
-    console.log(admin)
 
     return (
         <Box width={'100%'} display={'flex'} >

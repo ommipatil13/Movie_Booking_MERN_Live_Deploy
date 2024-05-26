@@ -12,7 +12,6 @@ const Booking = () => {
     const [movie, setMovie] = useState()
 
     const id = useParams().id;
-    console.log(id)
 
     const [inputs, setInputs] = useState({
         seatNumber: '',
@@ -46,9 +45,8 @@ const Booking = () => {
 
             if (response && response.status === 200) {
                 window.location.href = response.data.url
-                // console.log(response.data)
-                // console.log(inputs);
-                newBooking({ ...inputs, movie: movie._id }).then((res) => console.log(res)).catch((error) => console.log(error))
+
+                newBooking({ ...inputs, movie: movie._id }).then((res) => console.log("book")).catch((error) => console.log(error))
             }
         }
 
@@ -58,7 +56,6 @@ const Booking = () => {
     useEffect(() => {
         getMovieDetails(id).then((res) => setMovie(res.movie)).catch((error) => console.log(error))
     }, [id])
-    console.log(movie)
 
     return (
         <div>

@@ -11,18 +11,17 @@ const Auth = () => {
 
     const dispatch = useDispatch()
     const onResReceived = (data) => {
-        console.log(data)
+
         dispatch(userActions.login())
         localStorage.setItem("userId", data.id)
         navigate('/')
     }
 
     const getData = (data) => {
-        console.log("Auth", data)
+
         sendUserAuthRequest(data.inputs, data.signup)
             .then(onResReceived)
-            // .then((res) => console.log(res))
-            // .then(() => dispatch(userActions.login()))
+
             .catch((error) => console.log(error))
     }
 

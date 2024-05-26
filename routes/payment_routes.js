@@ -33,8 +33,8 @@ paymentRouter.post('/', async (req, res) => {
                 }
             ],
             mode: 'payment',
-            success_url: 'http://localhost:3000/user',
-            cancel_url: 'http://localhost:3000/cancel',
+            success_url: 'https://movie-booking-mern-live-deploy.onrender.com/',
+            cancel_url: 'https://movie-booking-mern-live-deploy.onrender.com/',
             customer_email: 'test@check.com',
         })
 

@@ -7,6 +7,9 @@ import movie_routes from './routes/movie_routes.js';
 import booking_routes from './routes/booking_routes.js';
 import payment_routes from './routes/payment_routes.js';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 dotenv.config();
 
@@ -28,6 +31,18 @@ mongoose
     )
     .then(() => app.listen(8080, () => console.log('server and database connected')))
     .catch((e) => console.log(e));
+
+
+
+//deploy
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // app.use('/', (req, res, next) => {
 //     res.send('hello');

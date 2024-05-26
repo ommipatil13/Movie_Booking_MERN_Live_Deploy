@@ -9,7 +9,7 @@
     "start": "node app.js",
     "server": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
     "client": "npm start --prefix ./client",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Omkar Patil",
   "license": "ISC",
